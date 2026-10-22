@@ -1,0 +1,399 @@
+{
+  "dataset_repo": "najdresearch/najd-benchmark",
+  "evaluated_version": "2026.09.27.1",
+  "evaluated_revision": "3fa471f6c8ed2ebc37a8b60d40c88170d682b569",
+  "cases_sha256": "f2ffd3466a7f3027c585b210e4708b2d589e1df27f365a5dd5b48a4927ef0ff7",
+  "scope": "Cases from QCRI/IslamicFaithQA, almrsal-riddles, arabic-exams, arabicmmlu, aratrust, arbml-arabic-rc, commonsense-validation, dialectal-arabic-mmlu, mena-values (1,927 of the 6,089 cases in the release). Excludes the humain-* sources, which are reviewed separately.",
+  "upstream": {
+    "QCRI/IslamicFaithQA": {
+      "revision": "a525f5d47a04f9290e6aecaf34668c23a4431d63"
+    },
+    "arabic-exams": {
+      "revision": "bc7a29346dbcaa16a8cd883b1f3e681ab2b7ff2a"
+    },
+    "arabicmmlu": {
+      "revision": "7aa530e2893ac420352b3f5c1a1310c010e9758b"
+    },
+    "aratrust": {
+      "revision": "54f05f0e8a980c2937f488316fbc28392b41a52b"
+    },
+    "arbml-arabic-rc": {
+      "revision": "5e87525e9805b3f944e4bb89455e966fc1befd43"
+    },
+    "commonsense-validation": {
+      "revision": "85da6793fc34e58c885b80a9d070122afb249083"
+    },
+    "dialectal-arabic-mmlu": {
+      "revision": "f3c801b43861aa47bdbaca5f884598e9fabc8e67"
+    },
+    "mena-values": {
+      "revision": "43bdb1b77d3ed2cbbd957a0d3a976d986fdfebcc"
+    }
+  },
+  "reviewer": "Henos (Omotic): scripted checks and manual reading; not independent Arabic expert review",
+  "method": "scripts/audit_release_cases.py recomputes rule families from each case's prompt, options, key and metadata, and checks explicit families against a SHA-256 of the prompt and either the recorded key with a SHA-256 of the keyed option or a SHA-256 of the expected answer. No dataset question or answer text is stored. Explicit cases were read in full; reasons are plain facts or arithmetic in the case itself.",
+  "distinct_case_count": 125,
+  "evaluation_treatment": "Keep original frozen scores. Separately report sensitivity excluding these cases. This is post-hoc sensitivity, not a replacement headline score.",
+  "families": [
+    {
+      "id": "commonsense-validation-index-key",
+      "source_id": "commonsense-validation",
+      "method": "commonsense_index_key",
+      "count": 48,
+      "case_ids": ["commonsense-validation-00008", "commonsense-validation-00038", "commonsense-validation-00158", "commonsense-validation-00169", "commonsense-validation-00172", "commonsense-validation-00187", "commonsense-validation-00194", "commonsense-validation-00207", "commonsense-validation-00221", "commonsense-validation-00240", "commonsense-validation-00243", "commonsense-validation-00246", "commonsense-validation-00247", "commonsense-validation-00265", "commonsense-validation-00266", "commonsense-validation-00277", "commonsense-validation-00278", "commonsense-validation-00328", "commonsense-validation-00344", "commonsense-validation-00376", "commonsense-validation-00377", "commonsense-validation-00420", "commonsense-validation-00425", "commonsense-validation-00454", "commonsense-validation-00457", "commonsense-validation-00487", "commonsense-validation-00495", "commonsense-validation-00588", "commonsense-validation-00591", "commonsense-validation-00592", "commonsense-validation-00615", "commonsense-validation-00618", "commonsense-validation-00622", "commonsense-validation-00659", "commonsense-validation-00674", "commonsense-validation-00675", "commonsense-validation-00690", "commonsense-validation-00714", "commonsense-validation-00830", "commonsense-validation-00843", "commonsense-validation-00871", "commonsense-validation-00905", "commonsense-validation-00906", "commonsense-validation-00913", "commonsense-validation-00921", "commonsense-validation-00932", "commonsense-validation-00941", "commonsense-validation-00966"],
+      "status": "unanswerable_as_asked",
+      "finding": "All 48 cases from this source ask a yes/no question (whether the two given sentences are consistent) but carry answerKey \"0\" (26 cases) or \"1\" (22 cases) and no options. In every case the key is the position of the sentence that makes sense (the other sentence is the nonsensical one), not an answer to the question, so the prompt cannot be answered as asked.",
+      "label_changed": false,
+      "proposed_next_revision": "Ask which of the two sentences makes sense and list them as options, remapping answerKey to option letters."
+    },
+    {
+      "id": "islamicfaithqa-missing-case",
+      "source_id": "QCRI/IslamicFaithQA",
+      "method": "explicit",
+      "count": 26,
+      "case_ids": ["islamicfaithqa-ar-00072", "islamicfaithqa-ar-00140", "islamicfaithqa-ar-00298", "islamicfaithqa-ar-00318", "islamicfaithqa-ar-00591", "islamicfaithqa-ar-00610", "islamicfaithqa-ar-00695", "islamicfaithqa-ar-00735", "islamicfaithqa-ar-01168", "islamicfaithqa-ar-01278", "islamicfaithqa-ar-01321", "islamicfaithqa-ar-01367", "islamicfaithqa-ar-01800", "islamicfaithqa-ar-02145", "islamicfaithqa-ar-02225", "islamicfaithqa-ar-02317", "islamicfaithqa-ar-02324", "islamicfaithqa-ar-02392", "islamicfaithqa-ar-02495", "islamicfaithqa-ar-02563", "islamicfaithqa-ar-02737", "islamicfaithqa-ar-03158", "islamicfaithqa-ar-03541", "islamicfaithqa-ar-03650", "islamicfaithqa-ar-03671", "islamicfaithqa-ar-03809"],
+      "checks": {
+        "islamicfaithqa-ar-00072": {
+          "prompt_sha256": "4ef00e096e38471257a93ff062484ff6e83f53eef34ec1c542d1764dcb1d73dd",
+          "answer_sha256": "99bdb262a1343a10948834a2156d3791e70de88a7ffebb60ad34f4da8ec05175"
+        },
+        "islamicfaithqa-ar-00140": {
+          "prompt_sha256": "469ea528244efd78172957adec8e256bc31fbb2eb85778069f74050ca735b697",
+          "answer_sha256": "46b50ca06a0d13f984b288cadd5941b2b4c905a39e7ae928aa86e317e00a19f4"
+        },
+        "islamicfaithqa-ar-00298": {
+          "prompt_sha256": "63276d05ad450a414e8d0afc5c1293b83183fa20d2ee674df9347673560704de",
+          "answer_sha256": "22045e78e1bd01b388d57a4b1c68a12ae48f648a0c273f0810bc7ef6f562ec44"
+        },
+        "islamicfaithqa-ar-00318": {
+          "prompt_sha256": "c4f1260a0457893f4e8a77d663ba4f9b676fb57280a5fc0ab68a63071828182a",
+          "answer_sha256": "9f19283401f5f0237626f9efc79ac94176445ef6bbbb4ff95e0b42230e91cffb"
+        },
+        "islamicfaithqa-ar-00591": {
+          "prompt_sha256": "ebc25e66e82595719d0cb7ef66b03e68b95f3c7787a3802afaa085aa946f5195",
+          "answer_sha256": "455fb9c88b88e830b30edd6c41ed517407f88e9cf10d63f43bdd979b3c45d1d4"
+        },
+        "islamicfaithqa-ar-00610": {
+          "prompt_sha256": "c79d19ad812fe4debea3329c37d99bf19ed28133b812da89cdc35adcd5b682f3",
+          "answer_sha256": "335b2e0411b32c8bc710b421e92aed53a4ef1a1e00a25f2918c6d9e07ae26485"
+        },
+        "islamicfaithqa-ar-00695": {
+          "prompt_sha256": "8c3e0d6521bd04506ad137be02d950d4efd4638b93f997581e340d2b5950c61b",
+          "answer_sha256": "34981b5e7243cb64e6ded90a96d53026044d0750094d171086b55be82f1bf869"
+        },
+        "islamicfaithqa-ar-00735": {
+          "prompt_sha256": "aa5cc1bf6ddbd37cc3beabb10cdc5cdbcc778fe1269b30f63f0522f2f2a8fb16",
+          "answer_sha256": "103428a1be8abbd33715add8a5f52d57cda871c289a5fddd0249ef0c32d14d5f"
+        },
+        "islamicfaithqa-ar-01168": {
+          "prompt_sha256": "8b9d052c45417ae549e4d7dcb2f921697d344ee9e63032379a1d990cf653de62",
+          "answer_sha256": "3da4f8e613ecb4be02884f714c560243f93eeb268a71b1be26ca5552276682fd"
+        },
+        "islamicfaithqa-ar-01278": {
+          "prompt_sha256": "4b7c995822de808464fa309609439a36be54e2524aeacd12a3599f575e7a861c",
+          "answer_sha256": "8a09372b106a1ef33ef53cedd779038d927b203b7fa5645804da9c94780a6eb3"
+        },
+        "islamicfaithqa-ar-01321": {
+          "prompt_sha256": "ae6504c9c1dab8608b3b22e01491f88e8e519a65008c802a75d98d772ecffcc6",
+          "answer_sha256": "342241ffe1f35d10bab5f0b84b772aaf79b847adda585036dfe992bae8b81196"
+        },
+        "islamicfaithqa-ar-01367": {
+          "prompt_sha256": "378c2b72f40d7f7edaaf43992babb935fd73305394c4e66378be0bef75f65986",
+          "answer_sha256": "d20169fc22045cf2af361636badd90846dc4b3ab3f313639e947044463c5c405"
+        },
+        "islamicfaithqa-ar-01800": {
+          "prompt_sha256": "6ff64f92dca926f4c47e17353fc760e2f837ac2ffcfd69560691a900628a5123",
+          "answer_sha256": "72aa14e89939b371bb04ec4b8d514f0383e71e547afcce2df7ba5d077a72cf94"
+        },
+        "islamicfaithqa-ar-02145": {
+          "prompt_sha256": "d7753d0bce54d4b1828d950114fd6502eb9b0d1889d634eef3c7acb82eb40de8",
+          "answer_sha256": "96877545d7f8fa8cdd229ce1bf76a283c236b9e2e0a26e006d8f6809124dc451"
+        },
+        "islamicfaithqa-ar-02225": {
+          "prompt_sha256": "a4bbe10668ea110fbce95edb2be5998c45070688e24269b449ac84308d96ff0b",
+          "answer_sha256": "34646e333e1e52cde1bb4046565b11a771de5827233cac663807889f351a941b"
+        },
+        "islamicfaithqa-ar-02317": {
+          "prompt_sha256": "791592ece0a6e1fa5409011e3f941c9456fbcd46c83ce0fa4e7583be494cd97e",
+          "answer_sha256": "4ff263befde34622a176cb0cd536f02b16a01c574d55568600ea7f1447610264"
+        },
+        "islamicfaithqa-ar-02324": {
+          "prompt_sha256": "67dd711bd1910d782e54fb80f8b6412c12df441b64d354fe7958131befffe458",
+          "answer_sha256": "20af20865a2e718fc097f2fbbbea8cac3a09aaad94b51917b1ffd1e240fa5a95"
+        },
+        "islamicfaithqa-ar-02392": {
+          "prompt_sha256": "46d81dd46103e155f39bf6178f4168791a27a11cb3056f61d18313f25c93948a",
+          "answer_sha256": "3e22d4368ed0879b6a33079288ccfdd1a41505478994daa0b62fe2095e922d7c"
+        },
+        "islamicfaithqa-ar-02495": {
+          "prompt_sha256": "22b361f683467d3ee60587fb34db8dbde1377e5f6000116b897913f1c3972e83",
+          "answer_sha256": "fb05856a1b596c6e6c44d4f48587cfa98677c4e3aae18ac1d44e3d48ee4dd04f"
+        },
+        "islamicfaithqa-ar-02563": {
+          "prompt_sha256": "b71799f3b6a7edc5cf62fbdba27f09d7dfe49bd86fd64686971c3cc8b4443812",
+          "answer_sha256": "d94645fb562656c9c0c68f445781eb43db5b5c90a8c80d696a5a8ddfdcd15eb2"
+        },
+        "islamicfaithqa-ar-02737": {
+          "prompt_sha256": "4837a55bf2d033ee940cb7cb87e4931a031681852473b9c271167f979015933e",
+          "answer_sha256": "90a8bb2269b59c1456b821171c6fea18d328ceef567b2e62b7fb0441bab4d21f"
+        },
+        "islamicfaithqa-ar-03158": {
+          "prompt_sha256": "5ffe5dcfb550419a8216f77f5e4edae94755b60faefb8019db7653d6d61e61cb",
+          "answer_sha256": "1204123fae62ec86849dc8f15589933f6ac951ce00a0a078309014b1e80f208a"
+        },
+        "islamicfaithqa-ar-03541": {
+          "prompt_sha256": "e1fe375d6bbab396472e5dc4e784e4afd4f169c07ac2ae712df4e1bb0718d4bd",
+          "answer_sha256": "a093e62bf893ed8fd06c30f0b91f0a7575cbb11492ed8573100f60df02ffca38"
+        },
+        "islamicfaithqa-ar-03650": {
+          "prompt_sha256": "8cf14454aea2e0d2773088d66f10be04d18f61e99b6280eae14361610d422610",
+          "answer_sha256": "d0407128ca1fa962b4c510af1b66cd95422e5fb97a755057b74d0c75b7f64955"
+        },
+        "islamicfaithqa-ar-03671": {
+          "prompt_sha256": "fcf2891c60d831d535dd15bdcdcc06bb12f42405c132a925ed46edc2f73f0aaa",
+          "answer_sha256": "e5ebcb20fc3f79001fa7e494a3f65785d9643a92b73a7fa75aaa00bf4b0a16df"
+        },
+        "islamicfaithqa-ar-03809": {
+          "prompt_sha256": "475ebcd53da1164dffb854be6f232a22cf139aa71b8fc4b9ff4b588d5ae829d2",
+          "answer_sha256": "7f1ed319bd523af6961afd5f68055af2d22342db0037336ead8f4f231d0971fc"
+        }
+      },
+      "status": "missing_context",
+      "finding": "26 of the 476 prompts ask for an inheritance share or total (\"in this problem\", \"in this case\", \"in this estate\") without stating the heirs or the estate. The share depends on the full list of heirs, so the prompt has no answer without context that is not in the case. Each keyed answer is a specific number of shares.",
+      "label_changed": false,
+      "proposed_next_revision": "Add the heirs to each prompt or remove the demonstrative reference."
+    },
+    {
+      "id": "arbml-rc-context-at-length-cap",
+      "source_id": "arbml-arabic-rc",
+      "method": "context_at_length_cap",
+      "count": 14,
+      "case_ids": ["arbml-rc-00029", "arbml-rc-00193", "arbml-rc-00293", "arbml-rc-00294", "arbml-rc-00304", "arbml-rc-00339", "arbml-rc-00415", "arbml-rc-00457", "arbml-rc-00541", "arbml-rc-00597", "arbml-rc-00647", "arbml-rc-00692", "arbml-rc-00736", "arbml-rc-00977"],
+      "status": "context_length_cap_flagged",
+      "finding": "14 of the 496 contexts are 32,752 to 32,767 characters long; the longest of the other 482 is 31,173. The maximum, 32,767, is 2^15 - 1, so these contexts look cut at a character limit and the passage that supports the answer may not be in the released text.",
+      "label_changed": false,
+      "proposed_next_revision": "Publish the full source text, or choose the context window around the answer."
+    },
+    {
+      "id": "arbml-rc-answer-not-in-visible-context",
+      "source_id": "arbml-arabic-rc",
+      "method": "explicit",
+      "count": 2,
+      "case_ids": ["arbml-rc-00692", "arbml-rc-00736"],
+      "checks": {
+        "arbml-rc-00692": {
+          "prompt_sha256": "47e72862db2a9b917b35f79bd8b6869ba2a8584d6cb8a9e3db136659670a6408",
+          "answer_sha256": "90055cb405effb8dda89e5f9679355931f6b5e89d1c75c2c5ee285b7372ed4c7"
+        },
+        "arbml-rc-00736": {
+          "prompt_sha256": "ee20aeac23c94a97203070f1d7291d76796062135a72330979bceafcb58e2774",
+          "answer_sha256": "9973106c6270b41f4616f5bc53095ad234bc7387a471be250347ae79e1502dc3"
+        }
+      },
+      "status": "answer_not_in_visible_context",
+      "finding": "The context of each of these 2 cases is at the length cap (previous family) and the keyed answer does not occur in the visible text. For arbml-rc-00692 the visible text credits other commanders with the conquest the question asks about. For arbml-rc-00736 the text is a list of quotations about doors and does not contain the keyed answer.",
+      "label_changed": false,
+      "proposed_next_revision": "Restore the passage that contains the answer; after review, confirm or replace the key."
+    },
+    {
+      "id": "mena-values-no-country-data",
+      "source_id": "mena-values",
+      "method": "survey_no_data",
+      "count": 2,
+      "case_ids": ["mena-values-0443-review-copy", "mena-values-0446-review-copy"],
+      "status": "no_reference_data",
+      "finding": "Every country entry (14 in each case) is a no-data marker, so there is no reference distribution. The other 498 cases from this source all have data for at least one country (111 of them have no data for some countries).",
+      "label_changed": false,
+      "proposed_next_revision": "Remove the cases or supply the survey distributions."
+    },
+    {
+      "id": "dialectal-mmlu-english-labelled-arabic",
+      "source_id": "dialectal-arabic-mmlu",
+      "method": "english_labelled_arabic",
+      "count": 25,
+      "case_ids": ["dialectal-arabic-mmlu-06513", "dialectal-arabic-mmlu-06796", "dialectal-arabic-mmlu-06869", "dialectal-arabic-mmlu-07078", "dialectal-arabic-mmlu-07103", "dialectal-arabic-mmlu-07688", "dialectal-arabic-mmlu-07993", "dialectal-arabic-mmlu-08561", "dialectal-arabic-mmlu-09148", "dialectal-arabic-mmlu-09457", "dialectal-arabic-mmlu-09474", "dialectal-arabic-mmlu-09785", "dialectal-arabic-mmlu-10106", "dialectal-arabic-mmlu-10362", "dialectal-arabic-mmlu-10375", "dialectal-arabic-mmlu-11210", "dialectal-arabic-mmlu-12338", "dialectal-arabic-mmlu-12928", "dialectal-arabic-mmlu-13270", "dialectal-arabic-mmlu-13828", "dialectal-arabic-mmlu-13829", "dialectal-arabic-mmlu-13856", "dialectal-arabic-mmlu-14103", "dialectal-arabic-mmlu-15375", "dialectal-arabic-mmlu-15612"],
+      "status": "language_label_mismatch",
+      "finding": "25 of the 165 cases have language \"ar\" but the prompt and all options contain no Arabic-script character; they are English. Exactly these cases have provenance dialect ENG.",
+      "label_changed": false,
+      "proposed_next_revision": "Label these cases language \"en\" or exclude them from Arabic aggregates."
+    },
+    {
+      "id": "arabic-exams-00278-wrong-key",
+      "source_id": "arabic-exams",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabic-exams-00278"],
+      "checks": {
+        "arabic-exams-00278": {
+          "prompt_sha256": "53db5aa48f346d91c76819e15c21b535706bbaff523cc7382fc85afb6586a073",
+          "key": "D",
+          "keyed_option_sha256": "d03f2f98388d5014be2fba5b7a1aa382bd32d3fb3bafede2677ae62926f4498a"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (D) is smoking, offered as a way to maintain human health.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option C (doing sport)."
+    },
+    {
+      "id": "arabic-exams-00421-wrong-key",
+      "source_id": "arabic-exams",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabic-exams-00421"],
+      "checks": {
+        "arabic-exams-00421": {
+          "prompt_sha256": "c843a2e42e33785bc7ea3389f2257b5130f37916a0b3456ec510aaec600621e5",
+          "key": "B",
+          "keyed_option_sha256": "d578f235835026c4b7cbdd28ac28fa326bf1ac87b813577cdc4039932826df92"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (B) is the assassination in Sarajevo, which started the war in 1914. The question asks what moved the United States from neutrality to joining the Allies; the sinking of the Lusitania is another option.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option A (the sinking of the Lusitania)."
+    },
+    {
+      "id": "arabic-exams-00226-wrong-key",
+      "source_id": "arabic-exams",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabic-exams-00226"],
+      "checks": {
+        "arabic-exams-00226": {
+          "prompt_sha256": "f40b2c0356651c4d1d936534bb5cd045053a6025955b2b3e6f7ea138ecb19cd6",
+          "key": "D",
+          "keyed_option_sha256": "f3203e23453801b7cc30b7628a949cf4acbea650f61efb149aadcd073d31c7dd"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (D) is \"natural density\", but the question asks for the name of the difference between births and deaths, which is \"natural increase\", another option.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option A (natural increase)."
+    },
+    {
+      "id": "arabic-exams-00396-wrong-key",
+      "source_id": "arabic-exams",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabic-exams-00396"],
+      "checks": {
+        "arabic-exams-00396": {
+          "prompt_sha256": "acbee326666771186534fba218ceccaa4b9039abadcbfc46927a890d342c1577",
+          "key": "A",
+          "keyed_option_sha256": "89e94516298b999c3b43e305fda7a78e022034b999f20ad87699052f389aa509"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (A) is an order that puts the Portuguese after the Dutch and British, but the question asks for the earliest-to-latest order of colonial powers and the Portuguese came first; another option lists Portuguese, Spanish, Dutch, British.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option C (Portuguese, Spanish, Dutch, British)."
+    },
+    {
+      "id": "arabic-exams-00359-wrong-key",
+      "source_id": "arabic-exams",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabic-exams-00359"],
+      "checks": {
+        "arabic-exams-00359": {
+          "prompt_sha256": "f3f034eb491c40ee5473aac38c7b2dd5e94d686912a536bf69cc91152ac70951",
+          "key": "B",
+          "keyed_option_sha256": "a4af7c35ec1a274531325af4ec4f8c137bbcf26afe629c872c84484909914fbe"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (B) is Rabat. The fourth Alliance of Civilizations forum was held in Doha. The option texts carry their own letter prefixes and the Doha option, prefixed with the letter B, sits in position A, so the key letter and the option positions disagree.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option A (Doha, the option whose own prefix is B)."
+    },
+    {
+      "id": "aratrust-0135-wrong-key",
+      "source_id": "aratrust",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["aratrust-0135"],
+      "checks": {
+        "aratrust-0135": {
+          "prompt_sha256": "b43f78f25c0082e33140f48253e9cd8d7f76302f4253a41d6c1d75381e1ba183",
+          "key": "ج",
+          "keyed_option_sha256": "99e25b95ab3643e9beb7019b04d5809041b548b45783e2c092cff0689bb26316"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (#3) is Socrates, who is not French. The question asks for the French philosopher who described philosophy as a tree with metaphysics for roots; that is Descartes, another option.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key the first option (Descartes)."
+    },
+    {
+      "id": "arabicmmlu-10678-wrong-key",
+      "source_id": "arabicmmlu",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabicmmlu-10678-e68332b8"],
+      "checks": {
+        "arabicmmlu-10678-e68332b8": {
+          "prompt_sha256": "264439b6bb57bcfadb9fb2ac71398bd7ee6f85d29e7171a1c980e8851382cacc",
+          "key": "A",
+          "keyed_option_sha256": "5bf9a9c79a54c6a34813f8a276316e7fbb1bd4ee050a1df22b51bb9d4e0e1b9c"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The keyed option (A) is \"gene mutation\". Two parents with the dominant trait can have a child with the recessive trait when both carry the recessive allele; that is ordinary inheritance and not a mutation.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key option C (not a mutation)."
+    },
+    {
+      "id": "arbml-rc-00828-answer-contradicts-context",
+      "source_id": "arbml-arabic-rc",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arbml-rc-00828"],
+      "checks": {
+        "arbml-rc-00828": {
+          "prompt_sha256": "730effc2e0a34f1f8a297ab1fc7b758adc843f5b76341b6820d5609849330dfa",
+          "answer_sha256": "7f5ff93f30a3f3b95787ac22bb522e730115231f06fd6672338fd2ab39955a13"
+        }
+      },
+      "status": "answer_contradicts_context",
+      "finding": "The context says one rotation takes 24 hours, which is 1,440 minutes. The keyed answer is 1,140 minutes, which is 19 hours.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key 1,440 minutes."
+    },
+    {
+      "id": "almrsal-riddles-093-wrong-arithmetic",
+      "source_id": "almrsal-riddles",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["scraped-almrsal-riddles-093"],
+      "checks": {
+        "scraped-almrsal-riddles-093": {
+          "prompt_sha256": "a025f30a130b6e4c349dfa825ed1b88bee5c91a4b7084c14b65db636989b99c9",
+          "answer_sha256": "47b23a3f5db903ec5052c62e96b6b9741d37c2be0236f74292fd9aa4e52672d3"
+        }
+      },
+      "status": "answer_key_wrong",
+      "finding": "The ages are 54 and 80, so the gap is 26. The mother is 3 times the daughter's age when the daughter is 26 / 2 = 13, which makes the mother 39. The keyed answer is 41.",
+      "label_changed": false,
+      "proposed_next_revision": "After review, key 39."
+    },
+    {
+      "id": "arabicmmlu-6176-garbled-text",
+      "source_id": "arabicmmlu",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["arabicmmlu-6176-79c02573"],
+      "checks": {
+        "arabicmmlu-6176-79c02573": {
+          "prompt_sha256": "0011ef7259e4059c071a89443c08d25839b2a99b21e0e66b2a8504770072fcba",
+          "key": "D",
+          "keyed_option_sha256": "699917916d0e3d287671ba1c05538766ee8ffcc41a466265de1c0fe44f4c9dc5"
+        }
+      },
+      "status": "text_garbled",
+      "finding": "The prompt and all four options contain character sequences that are not valid Arabic words (broken letters and stray spaces inside words), so the question cannot be read or answered as published.",
+      "label_changed": false,
+      "proposed_next_revision": "Restore the text from the source file, then review the key."
+    }
+  ]
+}
