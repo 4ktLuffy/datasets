@@ -19,3 +19,19 @@ uv run najd-datasets prepare-review build/arabic-agent-eval/cases.jsonl --output
 ```
 
 Give separate copies to two independent Arabic/tool-use reviewers. Record their decisions separately before adjudication. The CSV is a working record and should remain private; do not commit it. A rights reviewer should verify the pinned data license and required attribution independently of the semantic reviewers.
+
+## Published flag reviews
+
+Files in `reviews/` flag cases without changing labels (`label_changed: false`). Frozen scores stay as published; report sensitivity separately.
+
+| File | Scope |
+|---|---|
+| [system-one-b04-ambiguity.json](../reviews/system-one-b04-ambiguity.json) | System One family B04 |
+| [humain-derived-cases.json](../reviews/humain-derived-cases.json) | 196 cases from three HUMAIN sources in release 2026.09.27.1 |
+
+Recompute the HUMAIN flags from the published release:
+
+```bash
+curl -LO https://huggingface.co/datasets/najdresearch/najd-benchmark/resolve/3fa471f6c8ed2ebc37a8b60d40c88170d682b569/datasets/najd-benchmark/2026.09.27.1/cases.jsonl
+uv run python scripts/audit_humain_cases.py cases.jsonl
+```

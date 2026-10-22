@@ -1,0 +1,161 @@
+{
+  "dataset_repo": "najdresearch/najd-benchmark",
+  "evaluated_version": "2026.09.27.1",
+  "evaluated_revision": "3fa471f6c8ed2ebc37a8b60d40c88170d682b569",
+  "cases_sha256": "f2ffd3466a7f3027c585b210e4708b2d589e1df27f365a5dd5b48a4927ef0ff7",
+  "scope": "Multiple-choice cases from humain-aratruthfulqa, humain-arapro and humain-aramath (913 cases).",
+  "upstream": {
+    "humain-aratruthfulqa": {
+      "revision": "162744fbf0590606415eb0924f2b5bd680486e3a",
+      "raw_sha256": "d2922ae982ed95b9c6bc959c858955888cf19b0c1ac24937e6fd8834942f88fc"
+    },
+    "humain-arapro": {
+      "revision": "e606730ed50b663d7655ea2e02793238f5166422",
+      "raw_sha256": "232a8494b2b30153b654be8dceaed690889452c718057132bf2414c6871bd9e8"
+    },
+    "humain-aramath": {
+      "revision": "b79e79b1b993d153613d1ce2357a1177f2cdcfa1",
+      "raw_sha256": "26f8da62679c444660cf3f83d82e1317bbca9e77e9fe0805c1d8274d476e2cc5"
+    }
+  },
+  "row_convention": "Upstream AraTruthfulQA rows are 0-based line indexes (Najd sourceRow minus 1). AraPro is cited by its id column, which equals its 0-based row.",
+  "reviewer": "Henos (Omotic): scripted checks and manual reading; not independent Arabic expert review",
+  "method": "scripts/audit_humain_cases.py recomputes rule families from each case's options and key, and checks explicit families against a recorded key and SHA-256 of the keyed option text. Flagged cases match the pinned upstream fields; Najd's adapter only strips surrounding whitespace from four AraTruthfulQA questions.",
+  "distinct_case_count": 196,
+  "evaluation_treatment": "Keep original frozen scores. Separately report sensitivity excluding these cases. This is post-hoc sensitivity, not a replacement headline score.",
+  "families": [
+    {
+      "id": "aratruthfulqa-last-option-key",
+      "source_id": "humain-aratruthfulqa",
+      "method": "last_option_key",
+      "count": 154,
+      "case_ids": ["humain-aratruthfulqa-00261", "humain-aratruthfulqa-00262", "humain-aratruthfulqa-00263", "humain-aratruthfulqa-00270", "humain-aratruthfulqa-00272", "humain-aratruthfulqa-00278", "humain-aratruthfulqa-00289", "humain-aratruthfulqa-00290", "humain-aratruthfulqa-00293", "humain-aratruthfulqa-00295", "humain-aratruthfulqa-00296", "humain-aratruthfulqa-00297", "humain-aratruthfulqa-00298", "humain-aratruthfulqa-00299", "humain-aratruthfulqa-00304", "humain-aratruthfulqa-00306", "humain-aratruthfulqa-00307", "humain-aratruthfulqa-00316", "humain-aratruthfulqa-00317", "humain-aratruthfulqa-00319", "humain-aratruthfulqa-00320", "humain-aratruthfulqa-00321", "humain-aratruthfulqa-00323", "humain-aratruthfulqa-00324", "humain-aratruthfulqa-00325", "humain-aratruthfulqa-00326", "humain-aratruthfulqa-00329", "humain-aratruthfulqa-00330", "humain-aratruthfulqa-00332", "humain-aratruthfulqa-00333", "humain-aratruthfulqa-00334", "humain-aratruthfulqa-00335", "humain-aratruthfulqa-00336", "humain-aratruthfulqa-00337", "humain-aratruthfulqa-00339", "humain-aratruthfulqa-00340", "humain-aratruthfulqa-00341", "humain-aratruthfulqa-00342", "humain-aratruthfulqa-00343", "humain-aratruthfulqa-00345", "humain-aratruthfulqa-00346", "humain-aratruthfulqa-00347", "humain-aratruthfulqa-00348", "humain-aratruthfulqa-00349", "humain-aratruthfulqa-00350", "humain-aratruthfulqa-00351", "humain-aratruthfulqa-00354", "humain-aratruthfulqa-00355", "humain-aratruthfulqa-00356", "humain-aratruthfulqa-00357", "humain-aratruthfulqa-00358", "humain-aratruthfulqa-00361", "humain-aratruthfulqa-00363", "humain-aratruthfulqa-00364", "humain-aratruthfulqa-00367", "humain-aratruthfulqa-00370", "humain-aratruthfulqa-00371", "humain-aratruthfulqa-00372", "humain-aratruthfulqa-00374", "humain-aratruthfulqa-00375", "humain-aratruthfulqa-00378", "humain-aratruthfulqa-00380", "humain-aratruthfulqa-00381", "humain-aratruthfulqa-00382", "humain-aratruthfulqa-00383", "humain-aratruthfulqa-00384", "humain-aratruthfulqa-00385", "humain-aratruthfulqa-00386", "humain-aratruthfulqa-00387", "humain-aratruthfulqa-00388", "humain-aratruthfulqa-00389", "humain-aratruthfulqa-00390", "humain-aratruthfulqa-00392", "humain-aratruthfulqa-00394", "humain-aratruthfulqa-00395", "humain-aratruthfulqa-00397", "humain-aratruthfulqa-00400", "humain-aratruthfulqa-00401", "humain-aratruthfulqa-00402", "humain-aratruthfulqa-00403", "humain-aratruthfulqa-00404", "humain-aratruthfulqa-00405", "humain-aratruthfulqa-00407", "humain-aratruthfulqa-00408", "humain-aratruthfulqa-00411", "humain-aratruthfulqa-00412", "humain-aratruthfulqa-00414", "humain-aratruthfulqa-00416", "humain-aratruthfulqa-00417", "humain-aratruthfulqa-00418", "humain-aratruthfulqa-00421", "humain-aratruthfulqa-00422", "humain-aratruthfulqa-00423", "humain-aratruthfulqa-00424", "humain-aratruthfulqa-00426", "humain-aratruthfulqa-00427", "humain-aratruthfulqa-00428", "humain-aratruthfulqa-00429", "humain-aratruthfulqa-00430", "humain-aratruthfulqa-00432", "humain-aratruthfulqa-00433", "humain-aratruthfulqa-00434", "humain-aratruthfulqa-00435", "humain-aratruthfulqa-00436", "humain-aratruthfulqa-00438", "humain-aratruthfulqa-00439", "humain-aratruthfulqa-00441", "humain-aratruthfulqa-00442", "humain-aratruthfulqa-00443", "humain-aratruthfulqa-00444", "humain-aratruthfulqa-00445", "humain-aratruthfulqa-00446", "humain-aratruthfulqa-00448", "humain-aratruthfulqa-00449", "humain-aratruthfulqa-00450", "humain-aratruthfulqa-00451", "humain-aratruthfulqa-00452", "humain-aratruthfulqa-00453", "humain-aratruthfulqa-00454", "humain-aratruthfulqa-00455", "humain-aratruthfulqa-00457", "humain-aratruthfulqa-00460", "humain-aratruthfulqa-00464", "humain-aratruthfulqa-00466", "humain-aratruthfulqa-00470", "humain-aratruthfulqa-00471", "humain-aratruthfulqa-00472", "humain-aratruthfulqa-00473", "humain-aratruthfulqa-00474", "humain-aratruthfulqa-00476", "humain-aratruthfulqa-00477", "humain-aratruthfulqa-00479", "humain-aratruthfulqa-00480", "humain-aratruthfulqa-00481", "humain-aratruthfulqa-00483", "humain-aratruthfulqa-00488", "humain-aratruthfulqa-00493", "humain-aratruthfulqa-00495", "humain-aratruthfulqa-00496", "humain-aratruthfulqa-00497", "humain-aratruthfulqa-00502", "humain-aratruthfulqa-00506", "humain-aratruthfulqa-00515", "humain-aratruthfulqa-00516", "humain-aratruthfulqa-00517", "humain-aratruthfulqa-00520", "humain-aratruthfulqa-00521", "humain-aratruthfulqa-00523", "humain-aratruthfulqa-00525", "humain-aratruthfulqa-00526", "humain-aratruthfulqa-00527", "humain-aratruthfulqa-00528", "humain-aratruthfulqa-00534", "humain-aratruthfulqa-00536"],
+      "eligible": 155,
+      "status": "position_shortcut_flagged",
+      "finding": "154 of the 155 cases with five or more options key the last option (upstream rows: 169 of 170). Choosing the last option answers 154 of these 155 cases.",
+      "label_changed": false,
+      "proposed_next_revision": "Shuffle options with a recorded seed and remap answerKey."
+    },
+    {
+      "id": "aratruthfulqa-duplicate-options",
+      "source_id": "humain-aratruthfulqa",
+      "method": "duplicate_options",
+      "count": 3,
+      "case_ids": ["humain-aratruthfulqa-00263", "humain-aratruthfulqa-00371", "humain-aratruthfulqa-00405"],
+      "status": "duplicate_options_flagged",
+      "finding": "Two options have the same text after removing the letter label.",
+      "label_changed": false,
+      "proposed_next_revision": "Remove the repeated distractor."
+    },
+    {
+      "id": "aratruthfulqa-contradicts-another-case",
+      "source_id": "humain-aratruthfulqa",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["humain-aratruthfulqa-00199"],
+      "checks": {
+        "humain-aratruthfulqa-00199": {
+          "key": "C",
+          "keyed_option_sha256": "084391894b446623a02bcbede99bb71521e0ca3e2a870314b7fa4167dc6d55f8"
+        }
+      },
+      "status": "answer_key_doubtful",
+      "finding": "The key (C) states that the sun is a green star. humain-aratruthfulqa-00339 in this release keys white and lists green as a wrong option.",
+      "evidence": "Upstream AraTruthfulQA_test.jsonl rows 198 and 338.",
+      "label_changed": false,
+      "proposed_next_revision": "After Arabic review, key option B (white, appearing yellow through the atmosphere)."
+    },
+    {
+      "id": "aratruthfulqa-unit-mismatch",
+      "source_id": "humain-aratruthfulqa",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["humain-aratruthfulqa-00379"],
+      "checks": {
+        "humain-aratruthfulqa-00379": {
+          "key": "B",
+          "keyed_option_sha256": "2d14c862060329382b74a85f5b2ffbc30789cd4b6c70e443ef5bc96ef20849fa"
+        }
+      },
+      "status": "question_option_mismatch",
+      "finding": "The question asks about one square kilometre; every option says one square mile. The key adds \"Australian\" to Nauru.",
+      "evidence": "Upstream AraTruthfulQA_test.jsonl row 378.",
+      "label_changed": false,
+      "proposed_next_revision": "After Arabic review, align the unit with the options and drop \"Australian\"."
+    },
+    {
+      "id": "arapro-identical-options",
+      "source_id": "humain-arapro",
+      "method": "duplicate_options",
+      "count": 13,
+      "case_ids": ["humain-arapro-00102", "humain-arapro-03725", "humain-arapro-04450", "humain-arapro-04795", "humain-arapro-04802", "humain-arapro-04814", "humain-arapro-04816", "humain-arapro-04836", "humain-arapro-04840", "humain-arapro-04848", "humain-arapro-04851", "humain-arapro-04852", "humain-arapro-04875"],
+      "status": "duplicate_options_flagged",
+      "finding": "Two options have identical text. 10 come from upstream ids 4789-4879 (cases humain-arapro-04790 to -04880), where option 2 equals option 1 in all 91 upstream rows.",
+      "label_changed": false,
+      "proposed_next_revision": "After Arabic review, restore a distinct distractor."
+    },
+    {
+      "id": "arapro-keyed-text-repeated",
+      "source_id": "humain-arapro",
+      "method": "keyed_text_repeated",
+      "count": 9,
+      "case_ids": ["humain-arapro-03725", "humain-arapro-04795", "humain-arapro-04814", "humain-arapro-04816", "humain-arapro-04836", "humain-arapro-04840", "humain-arapro-04848", "humain-arapro-04852", "humain-arapro-04875"],
+      "status": "ambiguous_key",
+      "finding": "The keyed text also appears as another option, so a model choosing the other copy is marked wrong. Subset of arapro-identical-options.",
+      "label_changed": false,
+      "proposed_next_revision": "Same as arapro-identical-options."
+    },
+    {
+      "id": "arapro-float-artefacts",
+      "source_id": "humain-arapro",
+      "method": "float_artefact",
+      "count": 4,
+      "case_ids": ["humain-arapro-00497", "humain-arapro-01463", "humain-arapro-03092", "humain-arapro-03487"],
+      "status": "formatting_flagged",
+      "finding": "Options contain binary floating-point artefacts, e.g. 0.9500000000000001 in humain-arapro-03092.",
+      "label_changed": false,
+      "proposed_next_revision": "Round to the precision the question uses."
+    },
+    {
+      "id": "arapro-upstream-key-conflict",
+      "source_id": "humain-arapro",
+      "method": "explicit",
+      "count": 1,
+      "case_ids": ["humain-arapro-04620"],
+      "checks": {
+        "humain-arapro-04620": {
+          "key": "C",
+          "keyed_option_sha256": "89d67315de9612ccbaf823ae2cf01f42d43dc7c784edf038c999e35aad0d2eae"
+        }
+      },
+      "status": "answer_key_doubtful",
+      "finding": "Upstream id 1357 (not in this release) has the same question and options in the same order, differing only in spacing, diacritics and one typo, with key 2. This case (upstream id 4619) has key 3. The keys disagree.",
+      "evidence": "humain-ai/AraPro data/test-00000-of-00001.parquet at e606730ed50b663d7655ea2e02793238f5166422, ids 1357 and 4619.",
+      "label_changed": false,
+      "proposed_next_revision": "Resolve the key with a physical-education reviewer."
+    },
+    {
+      "id": "aramath-unique-shortest-key",
+      "source_id": "humain-aramath",
+      "method": "unique_shortest_key",
+      "count": 21,
+      "case_ids": ["humain-aramath-00002", "humain-aramath-00023", "humain-aramath-00089", "humain-aramath-00109", "humain-aramath-00174", "humain-aramath-00181", "humain-aramath-00183", "humain-aramath-00232", "humain-aramath-00323", "humain-aramath-00335", "humain-aramath-00350", "humain-aramath-00358", "humain-aramath-00363", "humain-aramath-00373", "humain-aramath-00376", "humain-aramath-00383", "humain-aramath-00401", "humain-aramath-00437", "humain-aramath-00466", "humain-aramath-00553", "humain-aramath-00579"],
+      "status": "format_shortcut_flagged",
+      "finding": "The key is the unique shortest option. In 16 of these it is also the only whole number, and in 4 the distractors carry long float tails (e.g. 1.2790833333333333 in humain-aramath-00579). Choosing the shortest option, ties split evenly, is right 60.9% of the time over all 605 upstream rows and 54% over the 50 cases in this release.",
+      "note": "1 flagged case (humain-aramath-00002) comes from a row marked split=dev inside upstream test.jsonl.",
+      "label_changed": false,
+      "proposed_next_revision": "Write every option with the same number of decimals."
+    },
+    {
+      "id": "aramath-numerically-equal-options",
+      "source_id": "humain-aramath",
+      "method": "numerically_equal_options",
+      "count": 1,
+      "case_ids": ["humain-aramath-00257"],
+      "status": "ambiguous_key",
+      "finding": "Two options have the same numeric value (B \"10.0\" and D \"10\"); only one is keyed.",
+      "label_changed": false,
+      "proposed_next_revision": "Replace one of the equal options."
+    }
+  ]
+}
